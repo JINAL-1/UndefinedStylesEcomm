@@ -1,0 +1,107 @@
+*{
+    padding: 0px;
+    margin: 5px;
+    /*background-color: white;*/
+   }
+
+.logo{
+    display:inline;
+    width: 100px;
+    height: 100px;
+}
+
+header> article> h1{
+  font-size: 18px;
+  text-transform: uppercase;
+  color:rgb(210, 127, 231);
+}
+
+.posted-on{
+    color:blue;
+}
+
+.post-t1{
+    background-color: rgb(196, 160, 236);
+}
+
+/*#col>img
+{
+    width:200px;
+    height:350px;
+}
+
+.row {
+    display: flex;
+  }
+  
+  #col{
+    flex: 50%;
+    padding: 5px;
+  }*/
+
+/** Centered Nav **/
+
+.menu{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: rgb(210, 127, 231);*/
+        text-align:center;
+}
+
+
+.menu li{
+    display: inline;
+}
+
+
+
+.menu > li a  {
+  display: inline-block;
+  color: rgb(128, 0, 100);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu > li a:hover {
+  background-color: rgb(133, 119, 119);
+}
+
+.menu > li a:active {
+    color: rgb(224, 118, 118);
+  }
+
+  nav{
+      padding: 25px;
+  }
+
+  /*.wpforms-image-choices-image > img{
+    
+  }
+
+  div.wpforms-container-full .wpforms-form ul.wpforms-image-choices-classic img {
+    display: inline-block;
+width: 100px;
+height: 100px;
+  }
+
+  div.wpforms-container-full .wpforms-form ul.wpforms-image-choices-classic label:not(.wpforms-error) {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+      }
+*/
+      .wpforms-field-label-inline{
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 2px;
+      }
+
+      .woocommerce ul.products li.product a {
+        text-decoration: none;
+        background-color: pink;
+        display: inline-grid;
+    }
