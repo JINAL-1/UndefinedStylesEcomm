@@ -15,12 +15,12 @@ get_header();
     </section>
 
     <section class="row">
-        <article class="col-6" id="col">
-            <img src="<?php the_field('image_one');?>" alt="img1" >
+        <article class="col" id="col">
+            <img class="image-fluid" src="<?php the_field('image_one');?>" alt="img1" width="400px" height="550px" >
         </article>
 
-        <article class="col-6" id="col">
-        <img src="<?php the_field('image_two');?>" alt="img2" >
+        <article class="col" id="col">
+        <img class="image-fluid" src="<?php the_field('image_two');?>" alt="img2" width="400px" height="550px">
         </article>
     </section>
 
@@ -76,7 +76,7 @@ get_header();
         </section>
 
 <!-- filtering post by tag name-->
-    <section class="tagfilter">
+    <section class="tagfilter" id="tag-main-tmp">
         <article>
             <?php
                 $args1 = array(

@@ -20,5 +20,8 @@
         ?>
         </div>
 
+           <article class="shortcode">
+            <?php echo do_shortcode("[greeting]"); ?>
+            </article>
     </main>
     <?php get_footer(); ?>

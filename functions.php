@@ -720,12 +720,93 @@ add_action('init','client_review');
 
 function my_custom_styles() {
 	// Register my custom stylesheet
-	wp_register_style('custom-styles', get_template_directory_uri().'/assets/css/custom-style.css');
 	wp_register_style('bootstrap-styles', get_template_directory_uri().'/assets/css/bootstrap.min.css');
+	wp_register_style('custom-styles', get_template_directory_uri().'/assets/css/custom-style.css');
 	// Load my custom stylesheet
 	wp_enqueue_style('custom-styles');
 	wp_enqueue_style('bootstrap-styles');
   }
   add_action('wp_enqueue_scripts', 'my_custom_styles');
 
-  
+  //editing woocommerce product page
+  //removing default wrappers
+  remove_action('woocommerce_before_main_content',
+					'woocommerce_output_content_wrapper',10);
+
+remove_action('woocommerce_after_main_content',
+					'woocommerce_output_content_wrapper_end',10);
+
+
+	//removing hooks
+	remove_action('woocommerce_single_product_summary','woocommerce_template_single_price',10);
+
+  	remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price',10);
+
+	remove_action('woocomerce_product_tabs','woocommerce_product_reviews_tab',30);
+
+	remove_action('woocomerce_product_tabs_panel','woocommerce_product_reviews_panel',30);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',20);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_template_single_add_to_cart',30);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_output_product_data_tabs',10);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_upsell_display',15);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_output_related_products',20);
+
+	remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
+	//creating new  wrapper
+	function theme_wrapper_start()
+	{
+		echo	'<main id="main>';
+	}
+
+	function theme_wrapper_end(){
+		echo '</main>';
+	}
+
+	//sdding wocommerce support 
+	function theme_add_woocommerce_support()
+	{
+		add_theme_support('woocommerce');
+		//calls in all the support for woocommerce
+		add_theme_support('wc-product-gallery-zoom');
+		add_theme_support('wc-product-gallery-lightbox');
+		add_theme_support('wc-product-gallery-slider');
+	}
+
+	add_action('after_setup_theme','theme_add_woocommerce_support');
+	//add our hooks back in a different order
+
+	add_action('woocommerce_single_product_summary','woocommerce_template_single_price',10);
+
+	add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price',10);
+
+	add_action('woocommerce_single_product_summary','woocommerce_template_single_meta',10);
+	
+	add_action('woocommerce_single_product_summary','woocommerce_template_single_excerpt',15);
+
+  	add_action('woocommerce_single_product_summary','woocommerce_template_single_add_to_cart',20);
+
+	add_action('woocommerce_single_product_summary','woocommerce_upsell_display',25);
+
+	add_action('woocommerce_single_product_summary','woocommerce_output_related_products',25);
+
+	add_action('woocommerce_single_product_summary','woocommerce_output_product_data_tabs',30);
+
+	/**
+	 * Short Code
+	 */
+	// function that runs when shortcode is called
+	function wpb_demo_shortcode() { 
+ 
+	// Things that you want to do. 
+	$message = 'Hey! Welcome to Undefined Styles New York Fashion Week'; 
+	 
+	// Output needs to be return
+	return $message;
+	} 
+	// register shortcode
+	add_shortcode('greeting', 'wpb_demo_shortcode'); 

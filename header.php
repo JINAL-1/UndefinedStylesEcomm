@@ -14,10 +14,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!--Add bootstrap-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 
 	<!-- Add custom css-->
-	<link rel="stylesheet" href="<?php echo esc_url(home_url("wp-content/themes/jinal/assets/css/custom-style.css"))?>"/>
+	<!-- <link rel="stylesheet" href="<?php echo esc_url(home_url("wp-content/themes/jinal/assets/css/custom-style.css"))?>"/> -->
 
 	<!-- Add google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,13 +32,12 @@
 <!-- Grabs and assigns class upon the page it loads-->
 
 <header>
-	<article class="col">
-	<a href="<?php echo esc_url(home_url());?>">
-	<img class="logo" src="<?php echo esc_url(home_url('wp-content/uploads/2021/logo.png'));?>" alt="logo">
-	</a>
-	</article>
 	
-	<nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a href="<?php echo esc_url(home_url());?>">
+		<img class="logo" src="<?php echo esc_url(home_url('wp-content/uploads/2021/logo.png'));?>" alt="logo">
+		</a>
+		
 	<?php 
 	wp_nav_menu(array('menu'=>'navigation',//named "navigation" to menu
 						'theme_location'=>'',
